@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>profil</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="profil.css">
+</head>
+
+<body>
+  <header data-bs-theme="dark">
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom"
+          data-bs-title="daftar akun">
+          <a href="login.html">DAFTAR AKUN</a>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+          aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+          aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">MENU</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">beranda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="galeri.html">galeri</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="galeri.html">profil</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  lainya
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="kontak.html">kontak</a></li>
+                  <li><a class="dropdown-item" href="galeri.html">galeri</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex mt-3" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <body class="body-beranda">
+    <div class="container">
+      <div class="left-column">
+        <h1 class="h1-beranda">ADE ILHAM SEJAHTERAWAN</h1>
+        <p class="p-beranda">Web Developer | Designer</p>
+
+        <h2 class="h2-beranda">Tentang Saya</h2>
+        <p>Saya adalah seorang mahasiswa yang belajar di it's NU Pekalongan. Saya selalu bersemangat untuk belajar
+          teknologi baru dan meningkatkan keterampilan saya.</p>
+
+        <h2 class="h2-beranda">Pengalaman</h2>
+        <p class="p-beranda">Membuat kopi tanpa gula (2020-sekarang)<br>
+          Membuat Es Batu (2018-2020)</p>
+
+        <h2 class="h2-beranda">Pendidikan</h2>
+        <p class="p-beranda">S1 Teknik Perkulian payah, Universitas Semen Padang (2014-2018)</p>
+
+        <h2 class="h2-beranda">Kontak</h2>
+        <p class="p-beranda">Email: nama1972635@email.com<br>
+          WangtSapp: 0851.....<br>
+          Mobaillegens: POKE Illz(106....)</p>
+      </div>
+
+      <div class="right-column">
+        <img src="gambar/saya.jpg" alt="Foto Profil" class="profile-image">
+
+        <div class="skill-box">
+          <h2 class="h2-beranda">Keterampilan</h2>
+          <ul>
+            <li> membuat kopi tanpa gula </li>
+            <li> membuat esbatu</li>
+            <li>memasak telur</li>
+          </ul>
+        </div>
+
+        <div class="project-box">
+          <h2 class="h2-beranda">Proyek Terbaru</h2>
+          <p><strong>Website E-commerce</strong> - Mengembangkan skil memasak air.(kendil,cawan expert).</p>
+          <p><strong>Aplikasi Manajemen Tugas</strong> - Membuat aplikasi berisi tutorial membuat es batu (kulkas,
+            plastik, listrik, air).</p>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

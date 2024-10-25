@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <script src="../assets/js/color-modes.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.122.0">
+  <title>beranda</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
+
+    .btn btn-secondary {
+      z-index: 1000;
+    }
+
+    .footer {
+      color: rgb(6, 6, 6);
+      padding: 50px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .footer-links {
+      margin: 10px 0;
+    }
+
+    .footer-links a {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* Style 1: Modern dengan hero image */
+        .article-style-1 {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .article-style-1 .hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .article-style-1 .content {
+            padding: 30px;
+        }
+
+        .article-style-1 .meta {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .article-style-1 h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        /* Style 2: Minimal dengan tipografi besar */
+        .article-style-2 {
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .article-style-2 h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .article-style-2 .meta {
+            border-left: 3px solid #333;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .article-style-2 p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* Style 3: Magazine style */
+        .article-style-3 {
+            max-width: 1000px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .article-style-3 .main-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .article-style-3 .sidebar {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .article-style-3 h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .article-style-3 .related-articles {
+            margin-top: 20px;
+        }
+
+        .article-style-3 .related-article {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Style 4: Blog style */
+        .article-style-4 {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .article-style-4 .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .article-style-4 h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .article-style-4 .author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .article-style-4 .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .article-style-1 .hero-image {
+                height: 250px;
+            }
+
+            .article-style-2 h1 {
+                font-size: 36px;
+            }
+
+            .article-style-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .article-style-4 {
+                padding: 20px;
+            }
+        }
+  </style>
+
+
+  <link href="carousel.css" rel="stylesheet">
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      <path
+        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path
+        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+    </symbol>
+  </svg>
+
+  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+      aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+      <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+        <use href="#circle-half"></use>
+      </svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#sun-fill"></use>
+          </svg>
+          Light
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#moon-stars-fill"></use>
+          </svg>
+          Dark
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+          aria-pressed="true">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#circle-half"></use>
+          </svg>
+          Auto
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+
+  <header data-bs-theme="dark">
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom"
+          data-bs-title="daftar akun">
+          <a href="login.html">DAFTAR AKUN</a>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+          aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+          aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">MENU</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">beranda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="galeri.html">galeri</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="profil.html">profil</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  lainya
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="kontak.html">kontak</a></li>
+                  <li><a class="dropdown-item" href="galeri.html">galeri</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">hal lain di sini</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex mt-3" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="gambar/gambar1.jpg" width="100%" alt="" srcset="">
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>Depan Rumah.</h1>
+              <p class="opacity-75">Halaman Depan Rumah .</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Lihat selengkapnya</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="gambar/gambar2jpg.jpg" width="100%" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Belakang rumah.</h1>
+              <p>Gambar Belakang Rumah.</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Lihat selengkapnya</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="gambar/gambar3.jpg" width="100%" alt="">
+          <div class="container">
+            <div class="carousel-caption text-end">
+              <h1>Garasi Rumah.</h1>
+              <p>Gambar Garasi Rumah.</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Lihat selengkapnya</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+
+
+    <div class="container marketing">
+
+
+      <div class="row">
+        <div class="col-lg-4">
+          <img src="gambar/gambar5.jpg" alt="Gambar Profil" style="width: 150px; height: 150px; border-radius: 100px;">
+          <h2 class="fw-normal">bermain</h2>
+          <p>Di samping saya hobi motor saya juga suka jalan- jalan kemana saja yang penting sampai bersama teman.</p>
+          <p><a class="btn btn-secondary" href="galeri.html">lihat detailnya &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+          <img src="gambar/saya.jpg" alt="Gambar Profil" style="width: 150px; height: 150px; border-radius: 100px;">
+          <h2 class="fw-normal">saya</h2>
+          <p>Nama saya Ade Ilham Sejahterawan, saya seorang mahasiswa it's NU Pekalongan. Lebih lajut bisa lihat kontak
+            yang berada di menu atas pojok kiri.
+          </p>
+          <p><a class="btn btn-secondary" href="profil.html">lihat detailnya &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+          <img src="gambar/gambar4.jpg" alt="Gambar Profil" style="width: 150px; height: 150px; border-radius: 100px;">
+          <h2 class="fw-normal">Hobi</h2>
+          <p>hobi saya adalah bermain motor dan suka copot pasang knalpot. Walapun saya kuliah dengan prodi informatika
+          </p>
+          <p><a class="btn btn-secondary" href="#">lihat detailnya &raquo;</a></p>
+        </div>
+      </div>
+
+
+
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">KOSONG1. <span class="text-body-secondary">KOSONG.</span></h2>
+          <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, accusantium soluta
+            doloribus corrupti reprehenderit ut magnam earum inventore in laudantium qui modi pariatur cumque harum
+            blanditiis maiores rerum? Optio, accusamus.</p>
+        </div>
+        <div class="col-md-5">
+          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+            height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+            preserveAspectRatio="xMidYMid slice" focusable="false">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" /><text x="50%" y="50%"
+              fill="var(--bs-secondary-color)" dy=".3em">kosong</text>
+          </svg>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading fw-normal lh-1">KOSONG2. <span class="text-body-secondary">
+              KOSONG2.</span></h2>
+          <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt facilis iure saepe
+            doloribus quod earum optio totam? Magnam debitis ipsam cumque earum! Excepturi reiciendis a, illum minus
+            consequuntur ratione enim!</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+            height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+            preserveAspectRatio="xMidYMid slice" focusable="false">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" /><text x="50%" y="50%"
+              fill="var(--bs-secondary-color)" dy=".3em">kosong</text>
+          </svg>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">KOSONG3. <span class="text-body-secondary">KOSONG3.</span></h2>
+          <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur ratione quisquam ullam sed
+            iste aut quidem aliquam! Quae, optio unde quibusdam ipsam quasi quod, voluptatum velit pariatur repellendus
+            consequatur est..</p>
+        </div>
+        <div class="col-md-5">
+          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+            height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+            preserveAspectRatio="xMidYMid slice" focusable="false">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" /><text x="50%" y="50%"
+              fill="var(--bs-secondary-color)" dy=".3em">kosong</text>
+          </svg>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+    </div>
+
+       <!-- Style 1: Modern dengan hero image -->
+       <article class="article-style-1">
+        <img src="gambar/curug1.jpg" alt="Hero Image" class="hero-image">
+        <div class="content">
+            <div class="meta">
+                <span>April 27, 2024</span> • 
+                <span>5 menit baca</span> • 
+                <span>Oleh Feri Agus Dwinarko</span>
+            </div>
+            <h1>Dinas Tata Ruang Angkat Bicara Terkait Lapangan Desa Curug</h1>
+            <p>Pekalongan, www.koranpelopor.id. - Menyusuri fenomena yang ada terkait dugaan penyimpangan prosedur dalam mekanisme kegiatan program kerja Desa Curug Kecamatan Tirto Kabupaten Pekalongan, pada pembuatan lapangan yang terletak di Jl. Seroja RT 05 RW 01, meskipun telah melalui tahapan awal dari hasil Musdes di tahun 2022 yang di hadiri oleh Kepala Desa, Muspika ( Musyawarah Pimpinan Kecamatan ), BPD beserta anggota, para Kadus ( Kepala Dusun ) dan tokoh masyarakat akan tetapi belum dapat bermanfaat.</p>
+            <p>Hasil telusur tim media mendapatkan informasi yang cukup kuat, terkait pelaksanaan kegiatan tersebut di duga mengabaikan norma aturan yang sudah menjadi ketetapan dan keharusan melalui dinas terkait. Hal ini disampaikan oleh Tri Sunarni selaku fungsional Dinas Tata Ruang Pekerjaan Umum Kabupaten Pekalongan pada saat berada di ruang kerjanya.
+              ( 26/04/2024 ).</p>
+        </div>
+    </article>
+
+    <!-- Style 2: Minimal dengan tipografi besar -->
+    <article class="article-style-2">
+        <h1>Keterangan dari warga masyarakat Desa Curug</h1>
+        <div class="meta">
+            <p>warga</p>
+            <p>( 26/04/2024 )</p>
+        </div>
+        <p>Keterangan dari warga masyarakat Desa Curug saat bertemu dengan Tim Media menyampaikan bahwa lapangan bola yang sekarang sedang berproses pembuatan nya merupakan permintaan dan harapan para pemuda dan karang taruna agar memiliki lapangan.</p>
+        <p>" Soal lapangan bola memang keinginan pemuda dan karang taruna, biar masyarakat pemuda dan anak anak bisa bermain dan berolah raga terutama sepak bola, kalau terkait pekerjaan lebih baik tanya TPK nya saja namanya PW ." Ujar pemuda yang tidak mau di sebut namanya ( Red. ).</p>
+    </article>
+
+    <!-- Style 3: Magazine style -->
+    <div class="article-style-3">
+        <article class="main-content">
+            <h1>Lopis Raksasa Jadi Tradisi Dan Budaya Syawalan di Kota Pekalongan Yang Terus Dilestarikan</h1>
+            <div class="meta">
+                <p>Oleh Feri Agus Dwinarko - April 17, 2024</p>
+            </div>
+            <p>Kota Pekalongan, www.koranpelopor.id. - Dalam semarak kreativitas yang mendunia, Kota Pekalongan, kota beribu warisan budaya, kembali menggelar Festival Lopis Raksasa 2024 yang telah menjadi ikon tradisi lokal khususnya warga Kelurahan Krapyak, Kecamatan Pekalongan Utara, Kota Pekalongan pada sepekan usai Hari Raya Idul Fitri atau bertepatan 17 April 2024.</p>
+            <!-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p> -->
+        </article>
+        <aside class="sidebar">
+            <h3>Artikel Terkait</h3>
+            <div class="related-articles">
+                <div class="related-article">
+                    <h4>Terbaru: Susunan Pemerintahan Kabinet Prabowo-Gibran 2024-2029</h4>
+                    <p>Susunan Pemerintahan Kabinet Prabowo-Gibran 2024-2029. Jakarta, koranpelopor.id – Untuk Beberapa nama dari Partai Politik......</p>
+                </div>
+                <div class="related-article">
+                    <h4>Sidang Paripurna DPRD Kabupaten Pasuruan, Gelar Dua Agenda Sekali</h4>
+                    <p>Ketua DPRD Kabupaten Pasuruan, Sudiono Fauzan bersama Pj. Bupati Pasuruan, Dr. Andriyanto Sepakat ...</p>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Style 4: Blog style -->
+    <article class="article-style-4">
+        <header class="header">
+            <h1>Grand Final Ballon Festival Meriahkan Perayaan Syawalan Di Kota Pekalongan</h1>
+            <div class="author">
+                <img src="gambar/balon.png" alt="Author" class="author-image">
+                <div class="author-info">
+                    <strong>Feri Agus Dwinarko</strong>
+                    <div>Oleh Feri Agus Dwinarko - April 17, 2024</div>
+                </div>
+            </div>
+        </header>
+        <p>Kota Pekalongan, www.koranpelopor.id. - Usai dilaksanakan babak penyisihan selama dua kali beberapa waktu lalu di Lapangan Setono dan Lapangan Sokoduwet, 30 tim kembali menampilkan kreasi balon udara pada grand final Pekalongan Ballon Festival bertepatan dengan perayaan syawalan, di lapangan Mataram setempat, Rabu (17/4/2024).</p>
+        <p>Pesona balon udara ditambatkan di area lapangan Mataram menarik antusias dari ratusan masyarakat. Festival ini menjadi kegiatan tahunan yang dilaksanakan oleh Pemerintah Kota Pekalongan, setelah tahun sebelumnya digelar di Stadion Hoegeng....</p>
+    </article>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#">Beranda</a>
+          <a href="#">Tentang Kami</a>
+          <a href="#">Layanan</a>
+          <a href="#">Kontak</a>
+        </div>
+        <div class="footer-bottom">
+          &copy; 2024 Ade ilham Sejahterawan Website. Hak Cipta Dilindungi.
+        </div>
+      </div>
+    </footer>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
